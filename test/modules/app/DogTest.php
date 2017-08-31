@@ -1,5 +1,5 @@
 <?php
-//require_once '../../../modules/app/Dog.php';
+require_once '../../../modules/app/Dog.php';
 
 class DogTest extends PHPUnit_Framework_TestCase
 {
