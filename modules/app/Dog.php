@@ -8,13 +8,21 @@ class Dog {
 
 
 	public function __construct($xPos = 0, $yPos = 0) {
-		$this->xPos = $xPos;
-		$this->yPos = $yPos;
+		if (is_numeric($xPos) && is_numeric($yPos)) {
+			$this->xPos = $xPos;
+			$this->yPos = $yPos;
+		} else {
+			throw new InvalidArgumentException("Invalid params");
+		}
 	}
 
 	public function move($xPos, $yPos) {
-		$this->xPos += $xPos;
-		$this->yPos += $yPos;
+		if (is_numeric($xPos) && is_numeric($yPos)) {
+			$this->xPos += $xPos;
+			$this->yPos += $yPos;
+		} else {
+			throw new InvalidArgumentException("Invalid params");
+		}
 	}
 
 	public function getXPos() {
@@ -27,7 +35,7 @@ class Dog {
 
 	public function __toString()
 	{
-		return "Dog on position: [$this->xPos : $this->yPos]";
+		return "Dog on position: [$this->xPos : $this->yPos]<br>";
 	}
 }
 
